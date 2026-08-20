@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Hero / Home
+   ========================================================================== */
+
+.hero {
+  padding-top: calc(var(--nav-height) + var(--space-xl));
+  padding-bottom: var(--space-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .hero__grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-lg);
+  }
+}
+
+.hero__kicker {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-deep);
+  margin-bottom: var(--space-sm);
+  white-space: nowrap;
+}
+
+.hero__title {
+  font-size: clamp(2.3rem, 5vw, 3.5rem);
+  letter-spacing: -0.01em;
+  max-width: 16ch;
+}
+
+.hero__body {
+  margin-top: var(--space-md);
+  font-size: var(--fs-body-lg);
+  color: var(--color-ink-soft);
+  max-width: 52ch;
+}
+
+.hero__actions {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* Portrait area — organic blob shape holding a placeholder image */
+.hero__portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  max-width: 360px;
+  margin-inline: auto;
+}
+
+.hero__portrait-blob {
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent-pale);
+  border-radius: 44% 56% 62% 38% / 48% 42% 58% 52%;
+  transform: rotate(-4deg);
+}
+
+.hero__portrait-frame {
+  position: absolute;
+  inset: 6%;
+  border-radius: 44% 56% 62% 38% / 48% 42% 58% 52%;
+  overflow: hidden;
+  border: 1px dashed var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--color-bg);
+}
+
+.hero__portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__portrait-placeholder {
+  padding: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Scroll indicator */
+.hero__scroll {
+  margin-top: var(--space-2xl);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.hero__scroll:hover {
+  color: var(--color-accent-deep);
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 32px;
+  background: var(--color-accent-line);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__scroll-line::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-accent-deep);
+  animation: scroll-drip 2.2s var(--ease-out) infinite;
+}
+
+@keyframes scroll-drip {
+  0% { top: -100%; }
+  60% { top: 100%; }
+  100% { top: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll-line::after { animation: none; top: 0; }
+}
+@media (min-width: 960px) {
+  .hero__portrait {
+    top: -100px;
+  }
+}

@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Fun Facts
+   Slightly more playful than the rest of the site — a gentle hover tilt
+   and an italic serif numeral, while staying on-brand.
+   ========================================================================== */
+
+.fun-facts__grid {
+  margin-top: var(--space-lg);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  align-items: stretch;
+}
+
+@media (min-width: 900px) {
+  .fun-facts__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.fun-fact {
+  padding: var(--space-lg) var(--space-md);
+
+  border-radius: var(--radius-lg);
+
+  background: var(--color-bg);
+
+  border: 1px solid var(--color-accent-line);
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.fun-fact:hover {
+  transform: rotate(-1deg) translateY(-4px);
+  box-shadow: 0 18px 40px rgba(33, 32, 31, 0.08);
+  border-color: var(--color-accent);
+}
+
+.fun-fact__number {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-h1);
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.fun-fact__title {
+  font-size: var(--fs-h3);
+  margin-top: var(--space-xs);
+}
+
+.fun-fact__text {
+  margin-top: var(--space-xs);
+  color: var(--color-ink-soft);
+  font-size: var(--fs-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fun-fact:hover { transform: none; }
+}

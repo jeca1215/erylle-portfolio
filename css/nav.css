@@ -1,0 +1,174 @@
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-fast) var(--ease-out),
+              background var(--duration-fast) var(--ease-out);
+}
+
+.nav.is-scrolled {
+  border-bottom-color: var(--color-accent-line);
+}
+
+.nav__inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.nav__logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.nav__logo span {
+  color: var(--color-accent-deep);
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  list-style: none;
+  margin: 0;
+  padding: var(--space-2xs);
+  background: var(--color-bg-tint);
+  border-radius: var(--radius-pill);
+  position: relative;
+}
+
+.nav__links a {
+  position: relative;
+  z-index: 2;
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--color-ink-soft);
+  border-radius: var(--radius-pill);
+  transition: color var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.nav__links a.is-active {
+  color: var(--color-ink);
+}
+
+.nav__links a:hover {
+  color: var(--color-accent-deep);
+}
+
+/* Sliding pill indicator, positioned via JS with inline left/width */
+.nav__indicator {
+  position: absolute;
+  top: var(--space-2xs);
+  bottom: var(--space-2xs);
+  left: 0;
+  width: 0;
+  background: var(--color-bg);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 1px 2px rgba(33, 32, 31, 0.08);
+  transition: transform var(--duration-med) var(--ease-out),
+              width var(--duration-med) var(--ease-out);
+  z-index: 1;
+}
+
+.nav__cta {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .nav__cta { display: inline-flex; }
+}
+
+/* Mobile menu toggle */
+.nav__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: var(--color-bg-tint);
+  border-radius: var(--radius-pill);
+}
+
+@media (min-width: 900px) {
+  .nav__toggle { display: none; }
+}
+
+.nav__toggle-bar,
+.nav__toggle-bar::before,
+.nav__toggle-bar::after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--color-ink);
+  border-radius: 2px;
+  transition: transform var(--duration-fast) var(--ease-out),
+              opacity var(--duration-fast) var(--ease-out);
+}
+
+.nav__toggle-bar { position: relative; }
+.nav__toggle-bar::before { position: absolute; top: -6px; left: 0; }
+.nav__toggle-bar::after { position: absolute; top: 6px; left: 0; }
+
+.nav.is-open .nav__toggle-bar { background: transparent; }
+.nav.is-open .nav__toggle-bar::before { transform: translateY(6px) rotate(45deg); }
+.nav.is-open .nav__toggle-bar::after { transform: translateY(-6px) rotate(-45deg); }
+
+/* Mobile nav panel */
+@media (max-width: 899px) {
+  .nav__links {
+    position: fixed;
+    top: var(--nav-height);
+    left: var(--space-sm);
+    right: var(--space-sm);
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--color-bg);
+    border: 1px solid var(--color-accent-line);
+    border-radius: var(--radius-md);
+    padding: var(--space-xs);
+    box-shadow: 0 12px 32px rgba(33, 32, 31, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity var(--duration-fast) var(--ease-out),
+                transform var(--duration-fast) var(--ease-out),
+                visibility 0s linear var(--duration-fast);
+  }
+
+  .nav.is-open .nav__links {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity var(--duration-fast) var(--ease-out),
+                transform var(--duration-fast) var(--ease-out);
+  }
+
+  .nav__links a {
+    padding: 0.85rem 1rem;
+    text-align: left;
+  }
+
+  .nav__indicator { display: none; }
+}

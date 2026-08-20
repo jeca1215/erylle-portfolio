@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Contact + Footer
+   Structural only for now.
+   ========================================================================== */
+
+.contact__links {
+  margin-top: var(--space-lg);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.contact__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+
+  padding: 0.9rem 1.4rem;
+
+  border: 1px solid var(--color-accent-line);
+  border-radius: var(--radius-pill);
+
+  background: var(--color-bg);
+
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-ink-soft);
+
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.contact__link:hover {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-bg);
+  transform: translateY(-2px);
+}
+
+.contact__link-label {
+  color: var(--color-accent-deep);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.contact__link:hover .contact__link-label {
+  color: var(--color-bg);
+}
+
+@media (max-width: 600px) {
+  .contact__links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact__link {
+    max-width: 100%;
+  }
+}
+
+.footer {
+  padding-block: var(--space-md);
+  border-top: 1px solid var(--color-accent-line);
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  color: var(--color-muted);
+}
+
+.footer__inner a {
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.footer__inner a:hover {
+  color: var(--color-accent-deep);
+}

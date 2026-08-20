@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Skills
+   ========================================================================== */
+
+.skills__list {
+  margin-top: var(--space-lg);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  max-width: 900px;
+}
+
+.skills__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.7rem 1.15rem;
+
+  border: 1px solid var(--color-accent-line);
+  border-radius: var(--radius-pill);
+
+  background: var(--color-bg);
+  color: var(--color-ink-soft);
+
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 500;
+
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.skills__item:hover {
+  color: var(--color-accent-deep);
+  background: var(--color-accent-pale);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(217, 116, 140, 0.08);
+}
+
+@media (max-width: 600px) {
+  .skills__list {
+    gap: 0.6rem;
+    margin-top: var(--space-md);
+  }
+
+  .skills__item {
+    padding: 0.6rem 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills__item:hover {
+    transform: none;
+  }
+}

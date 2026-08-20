@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erylle — Digital Portfolio</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <meta name="description" content="Erylle — Information Systems student, developer, UI/UX designer, product strategist, and video editor. Portfolio of digital experiences and projects." />
+
+  <!-- Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles: variables and base load first, then nav, then each section in page order -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/video-editing.css">
+  <link rel="stylesheet" href="css/experience.css">
+  <link rel="stylesheet" href="css/skills.css">
+  <link rel="stylesheet" href="css/fun-facts.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+  <!-- Custom Cursor -->
+<div class="cursor" id="cursor" aria-hidden="true">
+  <span class="cursor__ring"></span>
+  <span class="cursor__dot"></span>
+</div>
+  <!-- ============================= PAGE LOADER ============================= -->
+<div class="page-loader" id="pageLoader" aria-hidden="true">
+  <div class="page-loader__name">Erylle.</div>
+  <div class="page-loader__count" id="loaderCount">01</div>
+</div>
+
+  <!-- ============================= NAV ============================= -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="nav__logo">Erylle<span>.</span></a>
+
+      <ul class="nav__links" id="navLinks">
+        <li class="nav__indicator" id="navIndicator" aria-hidden="true"></li>
+        <li><a href="#home" data-nav-link>Home</a></li>
+        <li><a href="#about" data-nav-link>About</a></li>
+        <li><a href="#projects" data-nav-link>Projects</a></li>
+        <li><a href="#video-editing" data-nav-link>Video Editing</a></li>
+        <li><a href="#experience" data-nav-link>Experience</a></li>
+        <li><a href="#skills" data-nav-link>Skills</a></li>
+        <li><a href="#fun-facts" data-nav-link>Fun Facts</a></li>
+        <li><a href="#contact" data-nav-link>Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="btn btn-primary nav__cta">Let's talk</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="nav__toggle-bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================= HERO / HOME ============================= -->
+    <section id="home" class="hero">
+      <div class="container hero__grid">
+        <div>
+          <p class="hero__kicker">Developer · UI/UX Designer · Product Strategist · Video Editor</p>
+
+          <h1 class="hero__title">
+            Hi, I'm Erylle. I understand users, solve problems, and build <span class="highlight" data-highlight>digital experiences</span> that make people's lives easier.
+          </h1>
+
+          <p class="hero__body">
+            A third-year Bachelor of Science in Information Systems Minor in Cybersecurity student at De La Salle University with a passion for building web applications, solving real-world problems, and turning ideas into meaningful digital solutions.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="assets/images/GALINATO_CV.pdf" class="btn btn-secondary" id="downloadCvBtn" target="_blank">Download CV</a>
+          </div>
+
+          <a href="#about" class="hero__scroll">
+            <span class="hero__scroll-line"></span>
+            Scroll
+          </a>
+        </div>
+
+        <div class="hero__portrait reveal">
+          <div class="hero__portrait-blob"></div>
+          <div class="hero__portrait-frame">
+            <img src="assets/images/portrait.jpg" alt="Portrait of Erylle">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= ABOUT ============================= -->
+    <section id="about" class="section-tint">
+      <div class="container">
+        <p class="eyebrow reveal">About</p>
+
+        <div class="about__grid">
+          <div class="about__image-wrap reveal">
+          <div class="about__image">
+            <img src="assets/images/about.jpg" alt="Photo of Erylle">
+          </div>
+          </div>
+
+          <div>
+            <h2 class="about__statement reveal">
+              I understand the problem. I understand the user. I design the solution. I build it.
+            </h2>
+
+            <p class="about__text reveal">
+              I'm an Information Systems student who enjoys figuring out how things work, understanding the people who use them, and finding ways to make things better. I like turning ideas and problems into digital solutions. Whether I'm designing an interface, developing a web application, or finding a smarter way to solve a problem, I enjoy bringing together technology, creativity, and problem-solving to build things that are both functional and intuitive.
+            </p>
+
+            <p class="about__text reveal">
+              Beyond technology, I enjoy content creation and video editing as a way to document moments, tell stories, and express my creativity. From capturing memories with friends to turning an idea into a video, I enjoy creating things that people can connect with, experience, and remember.
+            </p>
+
+            <div class="about__info reveal">
+              <div class="about__info-item">
+                <p class="about__info-label">Education</p>
+                <p class="about__info-value">Bachelor of Science in Information Systems Minor in Cybersecurity</p>
+              </div>
+              <div class="about__info-item">
+                <p class="about__info-label">Based in</p>
+                <p class="about__info-value">Parañaque, Philippines</p>
+              </div>
+              <div class="about__info-item">
+                <p class="about__info-label">Focus</p>
+                <p class="about__info-value">Digital Product Development &amp; Frontend</p>
+              </div>
+              <div class="about__info-item">
+                <p class="about__info-label">Interests</p>
+                <p class="about__info-value">Technology, Design, Video Editing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= PROJECTS ============================= -->
+    <section id="projects">
+      <div class="container">
+        <p class="eyebrow reveal">Projects</p>
+        <h2 class="section-heading reveal">Selected work</h2>
+        <p class="section-intro reveal">A mix of coursework, team projects, and independent builds spanning full-stack development, UI/UX, and data.</p>
+
+        <div class="projects__grid">
+
+          <article class="project-card reveal">
+            <div class="project-card__media">
+              <img src="assets/images/project1.png" alt="Pokédex JavaFX Application screenshot">
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__top">
+                <span>01</span>
+                <span>2025</span>
+              </div>
+              <h3 class="project-card__title">Pokédex JavaFX Application</h3>
+              <p class="project-card__role">Full-Stack Developer</p>
+              <p class="project-card__desc">A CCPROG3 machine project providing an interactive graphical interface for managing Pokémon, moves, items, and trainer profiles, with application data stored through JSON files.</p>
+              <ul class="project-card__tech">
+                <li>Java</li><li>JavaFX</li><li>FXML</li><li>Gson</li><li>Maven</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__media">
+              <img src="assets/images/pro2.png" alt="BeanThere café discovery app screenshot">
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__top">
+                <span>02</span>
+                <span>2026</span>
+              </div>
+              <h3 class="project-card__title">BeanThere</h3>
+              <p class="project-card__role">Backend Developer</p>
+              <p class="project-card__desc">A café discovery and review web application built for our CCAPDEV course. Developed the frontend and collaborated on creating a seamless experience for discovering cafés, reading reviews, and sharing recommendations.</p>
+              <ul class="project-card__tech">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>Express</li><li>MongoDB</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__media">
+              <img src="assets/images/project3.png" alt="Tarlac Truck Pitstop management system screenshot">
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__top">
+                <span>03</span>
+                <span>2026</span>
+              </div>
+              <h3 class="project-card__title">Tarlac Truck Pitstop: Management System</h3>
+              <p class="project-card__role">UI/UX Designer</p>
+              <p class="project-card__desc">A full-stack inventory, sales, and analytics platform built for Tarlac Truck Pitstop (TTP). Includes an admin dashboard for managing parts, purchasing, and logistics, plus a customer-facing storefront with Stripe-powered checkout.</p>
+              <ul class="project-card__tech">
+                <li>React 18 + Vite</li><li>Tailwind CSS</li><li>Phosphor Icons</li><li>Supabase JS</li><li>Stripe.js</li><li>Node.js (v20)</li><li>Express.js</li><li>Prisma ORM</li><li>PostgreSQL via Supabase</li><li>Supabase Auth</li><li>Stripe</li><li>Docker + Docker Compose</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__media">
+              <img src="assets/images/project4.png" alt="Metro City Zoo dashboard screenshot">
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__top">
+                <span>04</span>
+                <span>2026</span>
+              </div>
+              <h3 class="project-card__title">Metro City Zoo Dashboard</h3>
+              <p class="project-card__desc">An interactive Looker Studio dashboard that transforms zoo operations data into clear visual reports using an ETL pipeline and data warehouse model.</p>
+              <ul class="project-card__tech">
+                <li>Looker Studio</li><li>SQL</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__media">
+              <img src="assets/images/project5.png" alt="Hash Table Dictionary project screenshot">
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__top">
+                <span>05</span>
+                <span>2025</span>
+              </div>
+              <h3 class="project-card__title">Hash Table Dictionary</h3>
+              <p class="project-card__desc">A Java implementation of a hash table supporting efficient word storage and lookup, developed to explore hashing techniques and data structure performance.</p>
+              <ul class="project-card__tech">
+                <li>Java</li><li>Data Structures</li><li>Hash Tables</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__media">
+              <img src="assets/images/project6.png" alt="Gym DB App screenshot">
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__top">
+                <span>06</span>
+                <span>2025</span>
+              </div>
+              <h3 class="project-card__title">Gym DB App</h3>
+              <p class="project-card__role">Frontend Developer</p>
+              <p class="project-card__desc">A JavaFX desktop application backed by a MySQL database, built for the CCINFOM (Database Systems) course. Manages member accounts and class/booking data for a fitness studio — memberships, class categories like Yoga and Strength Training, and scheduled sessions.</p>
+              <ul class="project-card__tech">
+                <li>Java</li><li>JavaFX</li><li>MySQL</li><li>Maven</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= VIDEO EDITING ============================= -->
+    <section id="video-editing" class="section-tint">
+      <div class="container">
+        <p class="eyebrow reveal">Video Editing</p>
+        <h2 class="section-heading reveal">Content &amp; storytelling</h2>
+        <p class="section-intro reveal">Vlogs and short-form edits — documenting trips and moments, cut together.</p>
+
+        <div class="video-editing__grid">
+
+          <a class="video-card reveal" href="https://youtu.be/xuxO2ZjqLTg?si=IOAwASXquhwMAUJM" target="_blank" rel="noopener" aria-label="Watch Hong Kong Vlog on YouTube (opens in a new tab)">
+            <div class="video-card__media">
+              <img src="assets/images/video1.JPG" alt="Hong Kong Vlog thumbnail">
+            </div>
+            <span class="video-card__play" aria-hidden="true">▶</span>
+            <div class="video-card__meta">
+              <span class="video-card__title">Hong Kong Vlog</span>
+              <span class="video-card__year">2025</span>
+            </div>
+          </a>
+
+          <a class="video-card reveal" href="https://youtu.be/3gwfosPsbos?si=zxO-yN51ChzVT4ND" target="_blank" rel="noopener" aria-label="Watch Fukuoka Vlog on YouTube (opens in a new tab)">
+            <div class="video-card__media">
+              <img src="assets/images/video2.png" alt="Fukuoka Vlog thumbnail">
+            </div>
+            <span class="video-card__play" aria-hidden="true">▶</span>
+            <div class="video-card__meta">
+              <span class="video-card__title">Fukuoka Vlog</span>
+              <span class="video-card__year">2024</span>
+            </div>
+          </a>
+
+          <a class="video-card reveal" href="https://youtu.be/B-q8HNxzHVQ?si=7rrwX6CsQg3xJTRA" target="_blank" rel="noopener" aria-label="Watch Summer Diaries on YouTube (opens in a new tab)">
+            <div class="video-card__media">
+              <img src="assets/images/video3.png" alt="Summer Diaries thumbnail">
+            </div>
+            <span class="video-card__play" aria-hidden="true">▶</span>
+            <div class="video-card__meta">
+              <span class="video-card__title">Summer Diaries</span>
+              <span class="video-card__year">2025</span>
+            </div>
+          </a>
+
+          <a class="video-card reveal" href="https://www.youtube.com/@erylle.g/shorts" target="_blank" rel="noopener" aria-label="Watch Erylle's Shorts on YouTube (opens in a new tab)">
+            <div class="video-card__media">
+              <img src="assets/images/video4.png" alt="Erylle's Shorts thumbnail">
+            </div>
+            <span class="video-card__play" aria-hidden="true">▶</span>
+            <div class="video-card__meta">
+              <span class="video-card__title">Erylle's Shorts</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= EXPERIENCE ============================= -->
+    <section id="experience">
+      <div class="container">
+        <p class="eyebrow reveal">Experience</p>
+        <h2 class="section-heading reveal">Where I've contributed</h2>
+        <p class="section-intro reveal">Leadership roles, research, and organization work alongside my studies.</p>
+
+        <div class="experience__list">
+
+          <div class="experience__item reveal">
+            <p class="experience__year">2018</p>
+            <h3 class="experience__title">Cadet Officer Candidacy Course (COCC) Leadership Program</h3>
+            <p class="experience__role">Corps Commander</p>
+            <div class="experience__desc">
+              <p>Led and coordinated cadet officers throughout the COCC Leadership Program, overseeing activities, maintaining discipline, and ensuring effective execution of assigned responsibilities.</p>
+            </div>
+          </div>
+
+          <div class="experience__item reveal">
+            <p class="experience__year">2024</p>
+            <h3 class="experience__title">The Impact of Artificial Intelligence (AI) Systems on the Personalized Learning Outcomes for Senior High School Students: A Systematic Review</h3>
+            <p class="experience__role">Author</p>
+            <div class="experience__desc">
+              <p>Led a significant portion of the research and contributed substantially to the writing of the published research paper.</p>
+            </div>
+          </div>
+
+          <div class="experience__item reveal">
+            <p class="experience__year">2024</p>
+            <h3 class="experience__title">Project Management</h3>
+            <p class="experience__role">Project Management Executive, CATCH 2T28</p>
+            <div class="experience__desc">
+              <p>Coordinated project planning and execution for batch-wide initiatives and activities.</p>
+            </div>
+          </div>
+
+          <div class="experience__item reveal">
+            <p class="experience__year">2025 – Present</p>
+            <h3 class="experience__title">Integrated Marketing Communications</h3>
+            <p class="experience__role">Creatives Executive, CATCH 2T28</p>
+            <div class="experience__desc">
+              <ul>
+                <li>Assisted the Creatives Committee in conceptualizing and producing promotional and branding materials for organizational initiatives.</li>
+                <li>Coordinated with different committees to maintain cohesive communication and branding for events and projects.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="experience__item reveal">
+            <p class="experience__year">2025</p>
+            <h3 class="experience__title">Crowd Management</h3>
+            <p class="experience__role">Assistant Team Leader, Animo Christmas 2025</p>
+            <div class="experience__desc">
+              <p>Helped oversee crowd flow, participant safety, and venue organization during the event.</p>
+            </div>
+          </div>
+
+          <div class="experience__item reveal">
+            <p class="experience__year">2025 – 2026</p>
+            <h3 class="experience__title">Talent Management</h3>
+            <p class="experience__role">Division Manager, De La Salle Innersoul</p>
+            <div class="experience__desc">
+              <ul>
+                <li>Led the organization in coordinating communications, schedules, and requirements of performers and guests.</li>
+                <li>Managed coordination with student artists, internal committees, and their performance requests to ensure smooth execution.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="experience__item reveal">
+            <p class="experience__year">2026</p>
+            <h3 class="experience__title">Internal Relations</h3>
+            <p class="experience__role">Assistant Team Leader, Meraki 2026</p>
+            <div class="experience__desc">
+              <p>Coordinated with partners and student media organizations to cover the activities during the event.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= SKILLS ============================= -->
+<section id="skills" class="section-tint">
+  <div class="container">
+    <p class="eyebrow reveal">Skills</p>
+    <h2 class="section-heading reveal">Tools I reach for</h2>
+
+    <div class="skills__list reveal">
+      <span class="skills__item">HTML</span>
+      <span class="skills__item">CSS</span>
+      <span class="skills__item">JavaScript</span>
+      <span class="skills__item">Node.js</span>
+      <span class="skills__item">MongoDB</span>
+      <span class="skills__item">C</span>
+      <span class="skills__item">Java</span>
+      <span class="skills__item">SQL</span>
+      <span class="skills__item">Git</span>
+      <span class="skills__item">GitHub</span>
+      <span class="skills__item">Figma</span>
+      <span class="skills__item">Canva</span>
+      <span class="skills__item">CapCut</span>
+    </div>
+  </div>
+</section>
+    <!-- ============================= FUN FACTS ============================= -->
+<section id="fun-facts">
+  <div class="container">
+    <p class="eyebrow reveal">Fun Facts</p>
+    <h2 class="section-heading reveal">A little more about me <span class="heart">❣️</span></h2>
+
+    <div class="fun-facts__grid">
+
+      <article class="fun-fact reveal">
+        <div class="fun-fact__number">01</div>
+        <h3 class="fun-fact__title">I'm multilingual!</h3>
+        <p class="fun-fact__text">
+          I can speak Mandarin, Hokkien, Filipino, English, and a little Korean.
+        </p>
+      </article>
+
+      <article class="fun-fact reveal">
+        <div class="fun-fact__number">02</div>
+        <h3 class="fun-fact__title">Programming achievement</h3>
+        <p class="fun-fact__text">
+          I'm one of only 3 students in my class who passed CCPROG1 (Programming) —
+          that's just 3 out of 43 students!
+        </p>
+      </article>
+
+      <article class="fun-fact reveal">
+        <div class="fun-fact__number">03</div>
+        <h3 class="fun-fact__title">I genuinely enjoy tutoring Mathematics!</h3>
+        <p class="fun-fact__text">
+          I've helped my friends pass MTH101A, and I also tutor Grades 6-10
+          students from my old school who are struggling with Math.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+    <!-- ============================= CONTACT ============================= -->
+<section id="contact" class="section-tint">
+  <div class="container">
+    <p class="eyebrow reveal">Contact</p>
+
+    <h2 class="section-heading reveal">Let's make something.</h2>
+
+    <p class="section-intro reveal">
+      Open to internships and collaborations. Feel free to connect with me by clicking below. Fastest way is through LinkedIn.
+    </p>
+
+    <div class="contact__links reveal">
+
+  <a
+    class="contact__link"
+    href="mailto:eryllegalinato@gmail.com"
+  >
+    <span class="contact__link-label">Email</span>
+  </a>
+
+  <a
+    class="contact__link"
+    href="https://www.linkedin.com/in/erylle-galinato-344577320/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <span class="contact__link-label">LinkedIn</span>
+  </a>
+
+  <a
+    class="contact__link"
+    href="https://github.com/jeca1215"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <span class="contact__link-label">GitHub</span>
+  </a>
+
+  <a
+    class="contact__link"
+    href="https://www.instagram.com/erylle_g"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <span class="contact__link-label">Instagram</span>
+  </a>
+
+</div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 Erylle.</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
