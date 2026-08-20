@@ -11,7 +11,7 @@
 
 .hero__grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-xl);
   align-items: center;
 }
@@ -30,7 +30,8 @@
   text-transform: uppercase;
   color: var(--color-accent-deep);
   margin-bottom: var(--space-sm);
-  white-space: nowrap;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .hero__title {
@@ -44,6 +45,7 @@
   font-size: var(--fs-body-lg);
   color: var(--color-ink-soft);
   max-width: 52ch;
+  overflow-wrap: break-word;
 }
 
 .hero__actions {
