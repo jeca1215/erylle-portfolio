@@ -4,19 +4,41 @@
 
 .about__grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-xl);
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "image statement"
+    "copy1 info"
+    "copy2 info";
+  column-gap: var(--space-lg);
+  row-gap: var(--space-lg);
+  align-items: start;
 }
 
-@media (min-width: 720px) {
-  .about__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-lg);
-    align-items: stretch;
-  }
+.about__image-wrap {
+  grid-area: image;
 }
 
-.about__image {
+.about__grid > div:not(.about__image-wrap) {
+  display: contents;
+}
+
+.about__statement {
+  grid-area: statement;
+}
+
+.about__text:nth-of-type(1) {
+  grid-area: copy1;
+}
+
+.about__text:nth-of-type(2) {
+  grid-area: copy2;
+}
+
+.about__info {
+  grid-area: info;
+}
+
+/* .about__image {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -35,6 +57,23 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+} */
+ .about__image {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 2048 / 1248;
+  background: var(--color-bg-tint);
+  border: 1px dashed var(--color-accent-line);
+  will-change: transform;
+}
+
+.about__image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .about__image-placeholder {
@@ -52,18 +91,30 @@
 }
 
 .about__text + .about__text {
-  margin-top: var(--space-sm);
+  margin-top: 5px;
 }
 
 .about__text {
   font-size: var(--fs-body-lg);
   color: var(--color-ink-soft);
   max-width: 60ch;
+  text-align:justify;
+  text-justify: inter-word;
+}
+.about__text strong {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.about__text em {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-accent-deep);
 }
 
 /* Info grid: Education / Based in / Focus / Interests */
 .about__info {
-  margin-top: var(--space-lg);
+  margin-top: 0;
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
@@ -104,4 +155,17 @@
   font-size: var(--fs-body-lg);
   font-family: var(--font-display);
   color: var(--color-ink);
+}
+@media (max-width: 719px) {
+
+  .about__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "statement"
+      "info"
+      "copy1"
+      "copy2";
+  }
+
 }
